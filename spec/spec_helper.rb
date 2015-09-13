@@ -6,6 +6,13 @@ require 'factory_girl_rails'
 Rails.backtrace_cleaner.remove_silencers!
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+
+require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {debug: true})
+end
+Capybara.javascript_driver = :poltergeist
+
 RSpec.configure do |config|
   config.mock_with :rspec
   config.use_transactional_fixtures = true

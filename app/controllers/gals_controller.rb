@@ -52,6 +52,6 @@ class GalsController < ApplicationController
     # params.require(:client).permit(:name, :description, :homepage_url)
     
     def gal_params
-      params.require(:gal).permit(:name, :gal_image_attributes => [:caption, :src, :description])
+      params.require(:gal).permit(:name, :gal_image_attributes => [:caption, :description, :src, :remote_src_url, :src_cache])
     end
 end

@@ -1,3 +1,6 @@
 = FarmGals
 
+== Setup
+Monkey patch FarmGalsUploader < CarrierWave::Uploader::Base in an initializer to add new versions. 
+
 This project rocks and uses MIT-LICENSE.

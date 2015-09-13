@@ -16,6 +16,10 @@ gemspec
 gem 'farm_slugs', :git => 'https://github.com/jessethebuilder/farm_slugs'
 # gem 'farm_tools', :path => 'C:\Users\Bucky\Desktop\jesseweb\farm_tools\farm_tools'
 
+gem 'jquery-rails'
+
+gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
+
 group :test, :development do
   gem 'faker'
   gem 'rspec-rails'
