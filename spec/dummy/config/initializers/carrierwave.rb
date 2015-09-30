@@ -12,10 +12,21 @@ CarrierWave.configure do |c|
 end
 
 
-class FarmGalsUploader < CarrierWave::Uploader::Base 
-  include CarrierWave::MiniMagick
-
-  version :test_size do 
-    process :resize_to_fill => [50, 50]
-  end
-end
+# class FarmGalsUploader < CarrierWave::Uploader::Base 
+  # include CarrierWave::MiniMagick
+# 
+  # version :test_size do 
+    # process :resize_to_fill => [50, 50]
+  # end
+#   
+  # version :thumb do 
+    # process :resize_to_fill => [150, 150]
+  # end
+#   
+    # def extension_white_list
+    # %w(jpg jpeg gif png)
+  # end
+# 
+#   
+#   
+# end

@@ -10,6 +10,9 @@ class GalsController < ApplicationController
 
   def new
     @gal = Gal.new
+    # 10.times do 
+      @gal.gal_images << GalImage.new
+    # end
   end
 
   # GET /objs/1/edit
@@ -52,6 +55,6 @@ class GalsController < ApplicationController
     # params.require(:client).permit(:name, :description, :homepage_url)
     
     def gal_params
-      params.require(:gal).permit(:name, :gal_image_attributes => [:caption, :description, :src, :remote_src_url, :src_cache])
+      params.require(:gal).permit(:name, :gal_images_attributes => [:id, :caption, :description, :src, :remote_src_url, :src_cache])
     end
 end

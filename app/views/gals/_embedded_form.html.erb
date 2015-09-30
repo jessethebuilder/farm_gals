@@ -1,0 +1,26 @@
+<div id="gal_image_row" class="row">
+	<%= f.fields_for :gal, html: {multipart: true} do |gal_fields| %>
+		<%= render :partial => 'gal_images/embedded_form', locals: {f: gal_fields} %>
+	
+		<script>		
+			//-------- Keep here --------------
+			function blankFarmGalImageForm(){
+				var form_fields = "<%= j render :partial => 'gal_images/embedded_form', :locals => {:f => gal_fields,
+																									:instance => GalImage.new,
+																									:child_index => 'new_gal_image'
+																									} %>";
+				return form_fields;
+			}
+		</script>
+
+	<% end %>	
+</div><!-- row -->
+
+<script>
+$(window).load(function(){
+	addGalImageFormOnFileSelect();
+	addGalImageFormOnRemoteUrlSelect()
+})
+	
+</script>
+

@@ -1,3 +1,7 @@
+require 'carrierwave'
+require 'mini_magick'
+require 'fog'
+
 module FarmGals
   class Engine < ::Rails::Engine
     

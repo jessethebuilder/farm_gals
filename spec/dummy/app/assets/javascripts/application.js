@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
+//= require farm_gals
 //= require_tree .

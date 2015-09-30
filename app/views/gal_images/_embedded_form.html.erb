@@ -1,0 +1,26 @@
+<%= f.fields_for :gal_images, local_assigns[:instance], child_index: local_assigns[:child_index] do |i| %>
+	<div class="col-md-4">
+		<div class="gal_image">	
+			<% if i.object && i.object.src.file -%>
+				<%= image_tag i.object.src.url(:small), class: 'gal_image_image' %>
+			<% else -%>		
+				<div class="form-group">
+					<%= i.label :caption, class: 'control-label' %>
+					<%= i.text_field :caption, class: 'form-control' %>
+				</div>
+			
+				<div class="form-group">
+					<%= i.label :src, 'From file', class: 'control-label' %>
+					<%= i.file_field :src, :class => 'form-control gal_image_upload_field' %>
+					<%= i.hidden_field :src_cache %>
+				</div>	
+						
+				<div class="form-group">
+					<%= i.label :remote_src_url, 'or image URL', class: 'control-label' %>
+					<%= i.text_field :remote_src_url, class: 'form-control gal_image_remote_url_field'%>
+				</div>		
+			<% end %>					
+		</div>
+	</div>
+<% end %>	
+		

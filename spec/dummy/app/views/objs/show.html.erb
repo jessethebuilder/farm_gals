@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% @obj.gal.gal_images.each do |i| %>
+	<div>
+		<h3><%= i.caption %></h3>
+		<%= image_tag i.src %>
+	</div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_obj_path(@obj) %> |
 <%= link_to 'Back', objs_path %>

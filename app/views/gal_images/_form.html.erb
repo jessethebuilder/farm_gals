@@ -1,0 +1,23 @@
+<%= form_for @gal_image, html: {multipart: true}, remote: true do |f| %>
+	<%= f.hidden_field :gal_id, :value => gal.id %>
+	
+	<div class="form-group">
+		<%= f.label :caption, class: 'control-label' %>
+		<%= f.text_field :caption, class: 'form-control' %>
+	</div>	
+		
+	<div class="form-group">
+		<%= f.label :src, 'Gallery Image', class: 'control-label' %>
+		<%= f.file_field :src, :class => 'form-control' %>
+		<%= f.hidden_field :src_cache %>
+	</div>	
+			
+	<div class="form-group">
+		<%= f.label :remote_src_url, 'or image URL', class: 'control-label' %>
+		<%= f.text_field :remote_src_url, class: 'form-control'%>
+	</div>
+<% end %>
+
+<%# if f.object && f.object.src.file -%>
+				<%#= image_tag f.object.src.url(:thumb) %>
+			<%# end %>	

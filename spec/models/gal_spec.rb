@@ -12,15 +12,15 @@ RSpec.describe Gal, type: :model do
   end
   
   describe 'Idioms' do
-    it 'should use FarmSlugs' do
-      gal.save!
-      gal.slug.should == gal.name.parameterize   
-    
-      gal.name = 'A New Name' 
-      gal.save!
-      gal.slug.should == 'a-new-name'
-      
-      Gal.find('a-new-name').should == gal  
-    end     
+    # it 'should use FarmSlugs' do
+      # gal.save!
+      # gal.slug.should == gal.name.parameterize   
+#     
+      # gal.name = 'A New Name' 
+      # gal.save!
+      # gal.slug.should == 'a-new-name'
+#       
+      # Gal.find('a-new-name').should == gal  
+    # end     
   end
 end

@@ -10,6 +10,14 @@
       </ul>
     </div>
   <% end %>
+  
+  <div id="gal_image_forms">
+  	<%= render :partial => 'gals/embedded_form', locals: {:f => f} %>
+  	
+  </div>
+  
+  
+
 
   <div class="actions">
     <%= f.submit %>

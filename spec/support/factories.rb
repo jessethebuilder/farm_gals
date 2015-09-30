@@ -4,7 +4,9 @@ FactoryGirl.define do
   end
   
   factory :gal_image do 
-    
-    src Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/support/test.png'))) 
+    factory :gal_image_with_src do
+      src Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/support/test.png'))) 
+    end
+    # src Rack::Test::UploadedFile.new(File.open('../support/test.png')) 
   end
 end

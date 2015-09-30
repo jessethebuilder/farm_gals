@@ -16,7 +16,13 @@ gemspec
 gem 'farm_slugs', :git => 'https://github.com/jessethebuilder/farm_slugs'
 # gem 'farm_tools', :path => 'C:\Users\Bucky\Desktop\jesseweb\farm_tools\farm_tools'
 
+
+
 gem 'jquery-rails'
+
+gem 'farm_shed', '0.0.2', :path => 'C:\Users\Bucky\Desktop\jesseweb\farm_shed'
+# gem 'farm_shed', '0.0.2', :git => 'https://github.com/jessethebuilder/farm_shed'
+gem 'geocoder'
 
 gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
 
@@ -41,6 +47,11 @@ end
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+
+
+gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+
 
 
 group :production do
