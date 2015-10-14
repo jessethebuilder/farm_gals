@@ -1,5 +1,5 @@
 class GalsController < ApplicationController
-    before_action :set_gal, only: [:show, :edit, :update, :destroy]
+  before_action :set_gal, only: [:show, :edit, :update, :destroy]
 
   def index
     @gals = Gal.all
