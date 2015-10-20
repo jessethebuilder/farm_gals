@@ -1,4 +1,4 @@
-class ApplicationController
+class ApplicationController < ActionController::Base
   def files_to_gals(obj, param)
     unless params[param].empty?
       obj.gal = Gal.new unless obj.gal
