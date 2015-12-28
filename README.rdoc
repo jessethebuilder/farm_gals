@@ -1,6 +1,16 @@
-= FarmGals
+<h1>README</h1>
 
-== Setup
-Monkey patch FarmGalsUploader < CarrierWave::Uploader::Base in an initializer to add new versions. 
+<h2>Setup</h2>
 
-This project rocks and uses MIT-LICENSE.
+<ol>
+	<li>Create an uploader called FarmGalsUploader</li>
+	<li>Add use_farm_gal or use_farm_gals to any Model that will use FarmGals</li>
+	<li>Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals</li>
+	<li>Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals
+		<ul>
+			<li>@include 'farm_gals/all' in your SASS/SCSS</li>
+			<li>//= require farm_gals/all in your js/coffee</li>
+			<li>Use farm_gal_embedded_bootstrap_form(form_builder, preview_version: :thumb, show_bulk_uploader: true) in a form View.</li>
+		</ul>
+	</li>
+</ol>
