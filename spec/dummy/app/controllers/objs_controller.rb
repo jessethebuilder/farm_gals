@@ -14,12 +14,12 @@ class ObjsController < ApplicationController
   def new
     @obj = Obj.new
     @obj.build_gal
-    @obj.gal.gal_images << GalImage.new
+    @obj.gal.gal_images.build
   end
 
   # GET /objs/1/edit
   def edit
-    @obj.gal.gal_images << GalImage.new
+    @obj.gal.gal_images.build
   end
 
   # POST /objs
@@ -29,8 +29,8 @@ class ObjsController < ApplicationController
     if @obj.save
       redirect_to @obj, notice: 'Obj was successfully created.'
     else  
-      @obj.gal.gal_images << GalImage.new
-      @obj.gal.gal_images.each{ |o| o.src_cache = o.src.file if o.src.file }
+      # @obj.gal.gal_images << GalImage.new
+      # @obj.gal.gal_images.each{ |o| o.src_cache = o.src.file if o.src.file }
       render :new
     end
   end
@@ -56,8 +56,8 @@ class ObjsController < ApplicationController
       @obj = Obj.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+      # Only allow a trusted parameter "white list" through.
     def obj_params
-      params.require(:obj).permit(:gal_attributes => [:gal_images_attributes => [:caption, :src, :remote_src_url, :src_cache]])
+      params.require(:obj).permit(FarmGals::PERMITTED_ATTRIBUTES)
     end
 end

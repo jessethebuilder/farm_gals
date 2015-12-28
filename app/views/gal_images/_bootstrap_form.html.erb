@@ -1,0 +1,57 @@
+<%= f.fields_for :gal_images do |i_fields| %>
+	<%= i_fields.hidden_field :id %>
+	<%= i_fields.hidden_field :src_cache %>
+	
+	<div class="row gal_image_row">
+		<%= i_fields.hidden_field :order, class: 'gal_image_order_field'%>
+		
+		<div class="col-xs-8">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<%= i_fields.label :caption, :class => 'control-label' %>
+						<%= i_fields.text_field :caption, :class => 'form-control' %>	
+					</div>
+				</div><!-- inner_col -->
+				
+				<div class="col-sm-6">
+					<div class="form-group upload_from_computer_group">
+						<%= i_fields.label :src, 'Upload', class: 'control-label' %>
+						<small><%= link_to 'or from URL <small>(www.image_page.com/image...)</small>'.html_safe, 'from_url', class: "upload_from_url_link" %>
+							
+						</small>
+						<%= i_fields.file_field :src, class: 'form-control upload_field' %>
+					</div>
+					
+					<div class="form-group upload_from_url_group">				
+						<%= i_fields.label :remote_src_url, 'From URL', class: 'control-label' %>
+						<small>
+							<%= link_to 'or upload from Computer or Device <span class="glyphicon glyphicon-floppy-open"></span>'.html_safe, 'from_computer', 
+										class: "upload_from_computer_link" %>
+							
+						</small>
+					
+						<%= i_fields.text_field :remote_src_url, :class => 'form-control upload_field', :placeholder => 'www.image_page.com/image...' %>
+					</div>
+				</div><!-- inner_col -->
+			</div><!--inner_row -->
+		</div><!-- col -->
+		<div class="col-xs-4">
+			<% if i_fields.object && i_fields.object.src? %>
+				<%= link_to i_fields.object.src.url, :target => '_blank' do %>
+					<%= image_tag i_fields.object.src.url(local_assigns[:preview_version]), class: 'farm_gal_preview_image' %>		
+					<% end %>			
+				<% end %>
+			<% if i_fields.object.persisted? %>
+				<div class="form-group">
+					<div class="checkbox">
+						<label>
+							<%= i_fields.check_box :_destroy %> destroy?
+						</label>
+					</div>
+				</div>
+			<% end %>
+		</div><!-- col -->
+	</div><!-- row -->
+<% end %>
+

@@ -1,0 +1,14 @@
+@import 'farm_shed/all';
+@import 'jquery-ui/sortable';
+
+.gal_image_row{
+  background-color: lightgrey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  @include border_radius(5px);
+  
+  .farm_gal_preview_image{
+    width: 50px;  
+  }
+}

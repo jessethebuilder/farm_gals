@@ -11,5 +11,6 @@ def use_farm_gal
 end
 
 module FarmGals
- 
+    PERMITTED_ATTRIBUTES = {:gal_attributes => [:id, :name, :main_image_id, {:bulk_upload => []}, 
+                            :gal_images_attributes => [:id, :caption, :src, :remote_src_url, :src_cache, :_destroy, :order, :description]]} 
 end

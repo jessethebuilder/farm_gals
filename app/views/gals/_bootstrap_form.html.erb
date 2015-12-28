@@ -1,0 +1,52 @@
+<%= f.fields_for :gal do |gal_fields| %>
+	<%= gal_fields.hidden_field :id %>
+	
+	<div id="gal_image_rows">
+		<%= render :partial => 'gal_images/bootstrap_form', :locals => {:f => gal_fields, :preview_version => local_assigns[:preview_version]} %>		
+	</div>
+	
+	
+	<% if local_assigns[:show_bulk_uploader] %>
+		<div class="row" id="bulk_uploader_row">
+			<div class="col-sm-2"></div><!-- col -->
+			
+			<div class="col-sm-8">
+				<div class="form-group">
+					<%= gal_fields.label :bulk_upload, class: 'control-label' %>
+					<small class="pull-right">
+						<%= link_to '(hide)', 'hide', id: 'bulk_uploader_closer' %>
+					</small>
+					<%= gal_fields.file_field :bulk_upload, class: 'form-control', :multiple => true %>
+				</div>			
+			</div><!-- col -->
+			
+			<div class="col-sm-2"></div><!-- col -->
+		</div><!-- row -->
+	<% end %>
+<% end %>
+
+<script>
+	function resetGalImageOrder(){
+		var rows = $('.gal_image_row');
+		
+		for(var i = 0; i < rows.length; i++){
+			$(rows[i]).find('.gal_image_order_field').val(i);
+		}
+	}
+
+	function makeGalImageRowsSortable(){
+		$('#gal_image_rows').sortable({
+			stop: function(event, ui){
+				resetGalImageOrder();
+			}
+		});
+		
+	}
+
+	$(document).ready(function(){
+		prepareBootstrapForm();	
+		
+		
+		
+	});
+			</script>

@@ -1,9 +1,6 @@
 module FarmGalsHelper
-  def farm_gal_form(remote: false)
-    render partial: 'gals/form', locals: {:remote => remote}
-  end
-  
-  def embedded_farm_gal_form(form_builder, remote: false)
-    render partial: 'gals/embedded_form', locals: {:f => form_builder, :remote => remote}
+  def farm_gal_embedded_bootstrap_form(form_builder, preview_version: :thumb, show_bulk_uploader: true)
+     render :partial => 'gals/bootstrap_form', 
+            :locals => {:f => form_builder, :preview_version => preview_version, :show_bulk_uploader => show_bulk_uploader}
   end
 end

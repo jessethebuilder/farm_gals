@@ -3,10 +3,10 @@ class CreateGalImages < ActiveRecord::Migration
     create_table :gal_images do |t|
       t.integer :gal_id
       t.string :caption
-      t.string :slug
       t.text :description
       t.string :src
-
+      t.integer :order
+      
       t.timestamps null: false
     end
   end

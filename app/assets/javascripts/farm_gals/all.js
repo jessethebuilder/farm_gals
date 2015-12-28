@@ -1,0 +1,1 @@
+//= require farm_gals/bootstrap_form.js

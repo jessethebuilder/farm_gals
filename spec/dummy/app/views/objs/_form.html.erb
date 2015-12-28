@@ -1,24 +1,8 @@
 <%= form_for(@obj) do |f| %>
-  <% if @obj.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@obj.errors.count, "error") %> prohibited this obj from being saved:</h2>
-
-      <ul>
-      <% @obj.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_explanation @obj %>
   
-  <div id="gal_image_forms">
-  	<%= render :partial => 'gals/embedded_form', locals: {:f => f} %>
-  	
-  </div>
-  
-  
-
-
+  <%= farm_gal_embedded_bootstrap_form f%>
+    
   <div class="actions">
     <%= f.submit %>
   </div>

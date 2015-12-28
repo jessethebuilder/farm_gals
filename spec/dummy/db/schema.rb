@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150906021236) do
     t.string   "slug"
     t.text     "description"
     t.string   "src"
+    t.integer  "order"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
