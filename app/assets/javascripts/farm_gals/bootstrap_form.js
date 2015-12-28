@@ -1,4 +1,3 @@
-//= require farm_shed/ui_helper
 //= require jquery-ui/sortable
 
 function showUploadFromComputerGroup(group){

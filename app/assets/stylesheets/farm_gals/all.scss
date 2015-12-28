@@ -1,1 +1,8 @@
+@mixin border_radius($rad){
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+
 @import 'bootstrap_form';
+
