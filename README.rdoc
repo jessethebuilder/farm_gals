@@ -6,7 +6,7 @@
 	<li>Create an uploader called FarmGalsUploader</li>
 	<li>Add use_farm_gal or use_farm_gals to any Model that will use FarmGals</li>
 	<li>Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals</li>
-	<li>Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals
+	<li>Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals).
 		<ul>
 			<li>@include 'farm_gals/all' in your SASS/SCSS</li>
 			<li>//= require farm_gals/all in your js/coffee</li>
