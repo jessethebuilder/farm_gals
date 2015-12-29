@@ -5,6 +5,7 @@ class CreateGals < ActiveRecord::Migration
       t.string :name
       t.string :has_farm_gals_type
       t.integer :has_farm_gals_id
+      t.text :description
 
       t.timestamps null: false
     end
