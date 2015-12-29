@@ -14,6 +14,14 @@ PATH
       mini_magick
       rails (~> 4.2.3)
 
+PATH
+  remote: C:/Users/Bucky/Desktop/jesseweb/farm_shed
+  specs:
+    farm_shed (0.0.2)
+      geocoder (~> 1.2.9)
+      rails (~> 4.2.4)
+      rest-client
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,6 +83,8 @@ GEM
     concurrent-ruby (1.0.0)
     database_cleaner (1.0.1)
     diff-lcs (1.2.5)
+    domain_name (0.5.25)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     excon (0.45.4)
     factory_girl (4.5.0)
@@ -197,6 +207,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    geocoder (1.2.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     guard (2.13.0)
@@ -213,6 +224,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     inflecto (0.0.2)
     ipaddress (0.8.0)
@@ -238,6 +251,7 @@ GEM
     minitest (5.8.3)
     multi_json (1.11.2)
     nenv (0.2.0)
+    netrc (0.11.0)
     nokogiri (1.6.7.1-x64-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -292,6 +306,11 @@ GEM
       builder
       nokogiri (>= 1.4.1)
       trollop
+    rest-client (1.8.0-x64-mingw32)
+      ffi (~> 1.9)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -350,6 +369,9 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2015.7)
       tzinfo (>= 1.0.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1-x64-mingw32)
     websocket (1.2.2)
     websocket-driver (0.6.3)
       websocket-extensions (>= 0.1.0)
@@ -371,6 +393,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   farm_gals!
+  farm_shed (= 0.0.2)!
   fog
   guard-rspec
   jquery-rails

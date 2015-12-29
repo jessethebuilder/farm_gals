@@ -1,8 +1,8 @@
-@mixin border_radius($rad){
-  -webkit-border-radius: $rad;
-  -moz-border-radius: $rad;
-  border-radius: $rad;
-}
-
+// @mixin border_radius($rad){
+  // -webkit-border-radius: $rad;
+  // -moz-border-radius: $rad;
+  // border-radius: $rad;
+// }
+@import 'farm_shed/all';
 @import 'bootstrap_form';
 

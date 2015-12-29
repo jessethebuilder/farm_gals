@@ -1,3 +1,4 @@
+//= require farm_shed/all
 //= require jquery-ui/sortable
 
 function showUploadFromComputerGroup(group){

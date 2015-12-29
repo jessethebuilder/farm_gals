@@ -34,6 +34,10 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 
 gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
 
+
+gem 'farm_shed', '0.0.2', :path => 'C:\Users\Bucky\Desktop\jesseweb\farm_shed'
+# gem 'farm_shed', '0.0.2', :git => 'https://github.com/jessethebuilder/farm_shed'
+
 group :production do
   # gem 'faker'
   gem 'rails_12factor'

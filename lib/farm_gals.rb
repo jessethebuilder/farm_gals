@@ -1,13 +1,19 @@
 require "farm_gals/engine"
+# 
+# def use_farm_gals(uploader = FarmGalUploader)
+  # has_many :gals, :as => :has_farm_gals
+  # accepts_nested_attributes_for :gals
+#   
+# 
+# end
 
-def use_farm_gals
-  has_many :gals, :as => :has_farm_gals
-  accepts_nested_attributes_for :gals
-end
-
-def use_farm_gal
+def use_farm_gal(uploader)
   has_one :gal, :as => :has_farm_gals
   accepts_nested_attributes_for :gal
+    
+  GalImage.class_eval do 
+    mount_uploader :src, uploader, dependent: :destroy
+  end
 end
 
 module FarmGals

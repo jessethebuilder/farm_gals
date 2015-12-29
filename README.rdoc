@@ -1,18 +1,19 @@
 = README
 
 == Demo
-	Check it out at http://anysoft.us/simple_object/new
+	Check it out at http://anysoft.us/simple_objects/new
 
 == Setup
 
-1.  Create an uploader called FarmGalsUploader
-2.  Add use_farm_gal or use_farm_gals to any Model that will use FarmGals
-3.	Add the CarrierWave gem to you Gemfile
+1.  Add use_farm_gal(uploader) to any Model that will use FarmGals
+  - There are no default Uploaders. You MUST create your own. You can name it anything you want. Just pass as a param. 
+2.	Add the CarrierWave gem to you Gemfile 
   - `gem 'carrierwave'`
-4.  Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals
+3.  Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals
   - You must add logic to your controllers. Please see the Suggested Controller Logic below
-5.  Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals).
+4.  Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals).
   - If you do not have them, add the jQuery and the jQueryUi gem to your Gemfile. 
+ 	- Repo FarmShed. It is at https://github.com/jessethebuilder/farm_shed
     - Only adds 'sortable' module to JS and SCSS from jQueryUi
 	- `gem 'jquery-rails'`
 	- `gem 'jquery-ui-rails'`
