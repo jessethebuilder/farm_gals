@@ -8,28 +8,28 @@
 1.  Create an uploader called FarmGalsUploader
 2.  Add use_farm_gal or use_farm_gals to any Model that will use FarmGals
 3.	Add the CarrierWave gem to you Gemfile
-	-	`gem 'carrierwave'`
+  - `gem 'carrierwave'`
 4.  Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals
-	- You must add logic to your controllers. Please see the Suggested Controller Logic below
+  - You must add logic to your controllers. Please see the Suggested Controller Logic below
 5.  Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals).
-	-   If you do not have them, add the jQuery and the jQueryUi gem to your Gemfile. 
-		-	Only adds 'sortable' module to JS and SCSS from jQueryUi
-		-	`gem 'jquery-rails'`
-		-	`gem 'jquery-ui-rails'`
-    -   `@include 'farm_gals/all'` in your SASS/SCSS
-    -   `//= require farm_gals/all` in your js/coffee
-    -   Use `farm_gal_embedded_bootstrap_form(form_builder, preview_version: :thumb, show_bulk_uploader: true)` in a form View.
+  -If you do not have them, add the jQuery and the jQueryUi gem to your Gemfile. 
+    - Only adds 'sortable' module to JS and SCSS from jQueryUi
+	- `gem 'jquery-rails'`
+	- `gem 'jquery-ui-rails'`
+    - `@include 'farm_gals/all'` in your SASS/SCSS
+    - `//= require farm_gals/all` in your js/coffee
+    - Use `farm_gal_embedded_bootstrap_form(form_builder, preview_version: :thumb, show_bulk_uploader: true)` in a form View.
     
 == Suggested Controller Logic
-	-	For use_farm_gal only, the pluaral use_farm_gals will require different logic
+  For use_farm_gal only, the pluaral use_farm_gals will require different logic
  
- ````ruby
+ ```ruby
  def new
     @object = SimpleObject.new
     @object.build_gal
     @object.gal.gal_images.build
  end
- ````
+ ```
  
  In edit, and the else part of the respond_to block (if save/update does not happen, due to a validation error) 
  in update and create, add: `@simple_object.gal.gal_images.build`
