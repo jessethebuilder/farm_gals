@@ -1,0 +1,51 @@
+<style>
+	.carousel-inner > .item > img,
+  
+  	.carousel-inner > .item > a > img{
+    	text-align: center;
+    	margin: auto;
+  	}
+</style>
+
+<%= content_tag :div, :class => 'carousel slide', :id => carousel_id, data: {:ride => 'carousel'} do %>
+	<% if show_indicators %>
+		<ol class="carousel-indicators">
+			<% gal.gal_images.each_with_index do |img, i| %>
+				<%= content_tag :li, '', :data => {:target => "##{carousel_id}", 'slide-to' => i} %>
+			<% end %>
+		</ol>
+	<% end %>
+	
+	<div class="carousel-inner" role="listbox">
+		<% gal.gal_images.each_with_index do |img, i| %>
+			<div class="item">
+				<%= image_tag img.src.url(image_version), alt: img.caption %>
+				<div class="carousel-caption">
+					<%= img.caption %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	
+	<%= link_to "##{carousel_id}", class: 'carousel-control left', role: 'button', data: {:slide => 'prev'} do %>
+	  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	  <span class="sr-only">Previous</span>
+	<% end %>
+	
+	
+	<%= link_to "##{carousel_id}", class: 'carousel-control right', role: 'button', data: {:slide => 'next'} do %>
+	  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	  <span class="sr-only">Next</span>	
+	<% end %>
+<% end %>
+
+<script>
+	function startFarmGalCarousel(){
+		var box = $('#<%= j carousel_id %>');
+		box.carousel();
+		box.find('.carousel-indicators').find('li').first().addClass('active');
+		box.find('.carousel-inner').find('div.item').first().addClass('active');	
+	}
+	
+	startFarmGalCarousel();
+</script>

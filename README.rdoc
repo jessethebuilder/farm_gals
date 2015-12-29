@@ -12,7 +12,7 @@
 4.  Add FarmGals::PERMITTED_ATTRIUBTES to the permitted attributes of any Controller that will use FarmGals
   - You must add logic to your controllers. Please see the Suggested Controller Logic below
 5.  Optionally, use the Views, Styles, and Scripts (Only works with use_farm_gal, not use_farm_gals).
-  -If you do not have them, add the jQuery and the jQueryUi gem to your Gemfile. 
+  - If you do not have them, add the jQuery and the jQueryUi gem to your Gemfile. 
     - Only adds 'sortable' module to JS and SCSS from jQueryUi
 	- `gem 'jquery-rails'`
 	- `gem 'jquery-ui-rails'`
@@ -21,7 +21,7 @@
     - Use `farm_gal_embedded_bootstrap_form(form_builder, preview_version: :thumb, show_bulk_uploader: true)` in a form View.
     
 == Suggested Controller Logic
-  For use_farm_gal only, the pluaral use_farm_gals will require different logic
+  *For use_farm_gal only, the pluaral use_farm_gals will require different logic*
  
  ```ruby
  def new

@@ -7,7 +7,7 @@ class Gal < ActiveRecord::Base
   serialize :image_order, Array
   
   def reject_gal_image(attrs)
-    attrs['id'].blank? && attrs['src'].blank?
+    attrs['id'].blank? && attrs['src'].blank? && attrs['src_cache'].blank?
   end
   
   def images(version = nil)

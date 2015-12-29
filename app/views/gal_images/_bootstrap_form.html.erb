@@ -1,8 +1,9 @@
 <%= f.fields_for :gal_images do |i_fields| %>
-	<%= i_fields.hidden_field :id %>
-	<%= i_fields.hidden_field :src_cache %>
 	
 	<div class="row gal_image_row">
+		<%= i_fields.hidden_field :id %>
+	
+	
 		<%= i_fields.hidden_field :order, class: 'gal_image_order_field'%>
 		
 		<div class="col-xs-8">
@@ -20,13 +21,15 @@
 						<small><%= link_to 'or from URL <small>(www.image_page.com/image...)</small>'.html_safe, 'from_url', class: "upload_from_url_link" %>
 							
 						</small>
-						<%= i_fields.file_field :src, class: 'form-control upload_field' %>
+						<%= i_fields.file_field :src, class: 'form-control upload_field' %>		
+						<%= i_fields.hidden_field :src_cache %>
 					</div>
 					
 					<div class="form-group upload_from_url_group">				
 						<%= i_fields.label :remote_src_url, 'From URL', class: 'control-label' %>
 						<small>
-							<%= link_to 'or upload from Computer or Device <span class="glyphicon glyphicon-floppy-open"></span>'.html_safe, 'from_computer', 
+							<!--  <span class="glyphicon glyphicon-floppy-open"></span> -->
+							<%= link_to 'or upload from Computer or Device'.html_safe, 'from_computer', 
 										class: "upload_from_computer_link" %>
 							
 						</small>
