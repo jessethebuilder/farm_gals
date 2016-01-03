@@ -8,7 +8,7 @@ require "farm_gals/engine"
 # end
 
 def use_farm_gal(uploader)
-  has_one :gal, :as => :has_farm_gals
+  has_one :gal, :as => :has_farm_gals, :dependent => :destroy
   accepts_nested_attributes_for :gal
     
   GalImage.class_eval do 

@@ -1,7 +1,7 @@
 class Gal < ActiveRecord::Base
   belongs_to :has_farm_gals, polymorphic: true
   
-  has_many :gal_images
+  has_many :gal_images, :dependent => :destroy
   accepts_nested_attributes_for :gal_images, :reject_if => :reject_gal_image, :allow_destroy => true
   
   serialize :image_order, Array
