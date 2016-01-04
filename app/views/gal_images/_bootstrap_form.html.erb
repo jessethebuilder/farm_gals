@@ -18,7 +18,7 @@
 				<div class="col-sm-6">
 					<div class="form-group upload_from_computer_group">
 						<%= i_fields.label :src, 'Upload', class: 'control-label' %>
-						<small><%= link_to 'or from URL <small>(www.image_page.com/image...)</small>'.html_safe, 'from_url', class: "upload_from_url_link" %>
+						<small><%= link_to 'or from URL', 'from_url', class: "upload_from_url_link" %>
 							
 						</small>
 						<%= i_fields.file_field :src, class: 'form-control upload_field' %>		
@@ -29,7 +29,7 @@
 						<%= i_fields.label :remote_src_url, 'From URL', class: 'control-label' %>
 						<small>
 							<!--  <span class="glyphicon glyphicon-floppy-open"></span> -->
-							<%= link_to 'or upload from Computer or Device'.html_safe, 'from_computer', 
+							<%= link_to 'or Upload', 'from_computer', 
 										class: "upload_from_computer_link" %>
 							
 						</small>
