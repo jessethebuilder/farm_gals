@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["jesse@anysoft.us"]
   s.homepage    = "http://anysoft.us"
   s.summary     = "Gallery model"
-  s.description = "TODO: Description of FarmGals."
+  s.description = "Sortable gallery"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
