@@ -1,13 +1,4 @@
-<style>
-	.carousel-inner > .item > img,
-  
-  	.carousel-inner > .item > a > img{
-    	text-align: center;
-    	margin: auto;
-  	}
-</style>
-
-<%= content_tag :div, :class => 'carousel slide', :id => carousel_id, data: {:ride => 'carousel'} do %>
+<%= content_tag :div, :class => 'carousel slide farm_gal_carousel', :id => carousel_id, data: {:ride => 'carousel'} do %>
 	<% if show_indicators %>
 		<ol class="carousel-indicators">
 			<% gal.gal_images.each_with_index do |img, i| %>
@@ -19,10 +10,12 @@
 	<div class="carousel-inner" role="listbox">
 		<% gal.gal_images.each_with_index do |img, i| %>
 			<div class="item">
-				<%= image_tag img.src.url(image_version), alt: img.caption %>
-				<div class="carousel-caption">
-					<%= img.caption %>
-				</div>
+				<%= link_to img.src.url, :target => '_blank' do %>
+					<%= image_tag img.src.url(image_version), alt: img.caption %>
+					<div class="carousel-caption">
+						<%= img.caption %>
+					</div>
+				<% end %>	
 			</div>
 		<% end %>
 	</div>
