@@ -1,0 +1,14 @@
+# This migration comes from farm_gals_engine (originally 20150905204417)
+class CreateGals < ActiveRecord::Migration
+  def change
+    create_table :gals do |t|
+      t.integer :main_image_id
+      t.string :name
+      t.string :has_farm_gals_type
+      t.integer :has_farm_gals_id
+      t.text :description
+
+      t.timestamps null: false
+    end
+  end
+end

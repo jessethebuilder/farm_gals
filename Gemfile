@@ -6,7 +6,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 group :test, :development do
-  gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
+  # gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
   gem 'faker'
   gem 'rspec-rails'
   # gem 'wdm'
@@ -32,17 +32,19 @@ gem 'fog'
 gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
-gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
+# gem 'aws-sdk', '~> 2'
+
+# gem 'cliver', :git => 'git://github.com/yaauie/cliver', :ref => '5617ce'
 
 
-gem 'farm_shed', '0.0.2', :path => 'C:\Users\Bucky\Desktop\jesseweb\farm_shed'
-# gem 'farm_shed', '0.0.2', :git => 'https://github.com/jessethebuilder/farm_shed'
+# gem 'farm_shed', '0.0.2', :path => ''
+gem 'farm_shed', '0.0.2', :git => 'https://github.com/jessethebuilder/farm_shed'
 
 group :production do
   # gem 'faker'
   gem 'rails_12factor'
 end
 
-ruby '2.1.5'
+ruby '2.3.1'
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

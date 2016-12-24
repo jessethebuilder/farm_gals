@@ -16,13 +16,14 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.2.3"
   s.add_dependency "carrierwave"
   s.add_dependency "mini_magick"
   s.add_dependency "fog"
 
+  # s.add_dependency 'aws-sdk', '~> 2'
+
+  s.add_development_dependency "rails", "~> 4.2.3"
   s.add_development_dependency "sqlite3"
-  
+
   s.test_files = Dir["spec/**/*"]
-  
 end
