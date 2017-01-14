@@ -1,5 +1,5 @@
 // require farm_shed/all
-// require jquery-ui/sortable
+//	 require jquery-ui/sortable
 
 function showUploadFromComputerGroup(group){
 	$(group).find('.upload_from_computer_link').click(function(e){
